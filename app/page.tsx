@@ -1,7 +1,17 @@
+'use client'
+
 import Image from "next/image";
 import styles from "./page.module.css";
+// import helloWorld from "@/api/helloWorld.mjs";
 
 export default function Home() {
+  async function call() {
+    const response = await fetch('./api/helloWorld.ts');
+    // const json = await response.json();
+    // console.log(json);
+    console.log(response)
+  }
+
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -52,7 +62,7 @@ export default function Home() {
           <p>Find in-depth information about Next.js features and API.</p>
         </a>
 
-        <a href="../helloWorld">HelloWorld</a>
+        <a onClick={() => { call() }}>HelloWorld</a>
 
       </div>
     </main>
