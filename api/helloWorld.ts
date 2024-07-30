@@ -1,3 +1,3 @@
-export default function helloWorld(req, res: any) {
+export default function helloWorld(req: any, res: any) {
     return res.json({"response": "hello"});
 }
